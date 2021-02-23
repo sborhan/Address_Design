@@ -30,28 +30,7 @@ namespace Address_Design
             services.AddControllers();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
-            services.AddSwaggerGen();
-            //services.AddSwaggerGen(
-            //   options =>
-            //   {
-            //       OpenApiInfo apiInfo = new OpenApiInfo()
-            //       {
-            //           Title = "Azure Security KubernetesOrchestrator",
-            //           Description = "v1",
-            //           Version = "v1",
-            //       };
-
-            //       OpenApiSecurityScheme scheme = new OpenApiSecurityScheme()
-            //       {
-            //           In = ParameterLocation.Header,
-            //           Type = SecuritySchemeType.ApiKey,
-            //           Description = "Please insert JWT with Bearer into field",
-            //           Name = "Authorization",
-            //       };
-
-            //       options.AddSecurityDefinition("Bearer", scheme);
-            //       options.SwaggerDoc("v1", apiInfo);
-            //   });
+            services.AddSwaggerGen();         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

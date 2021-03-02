@@ -23,13 +23,9 @@ namespace Address_Design.Controllers
         //
         // GET: /AddressForm/
         [HttpGet]
-        public string[] Index()
+        public IActionResult Index()
         {
-            return new string[]
-            {
-                "I Got the form from the server",
-                "REPLACE ME"
-            };
+            return View();
         }
 
 
@@ -44,6 +40,26 @@ namespace Address_Design.Controllers
                 "REPLACE ME"
             };
         }
+
+        //
+        // GET: /AddressForm/Get2?name=Rick&numtimes=4
+        [HttpGet("Get2")]
+        public string Get2(string name, int numTimes = 1)
+        {
+            return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
+        }
+
+        //
+        // GET: /AddressForm/Get3/3?name=Rick
+        [HttpGet("Get3")]
+        public string Get3(string name, int ID = 1)
+        {
+            return HtmlEncoder.Default.Encode($"Hello {name}, ID: {ID}");
+        }
+
+
+
+
 
 
 

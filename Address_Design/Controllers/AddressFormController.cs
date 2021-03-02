@@ -5,12 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.Encodings.Web;
 
 namespace Address_Design.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
-    public class AddressFormController : ControllerBase
+    public class AddressFormController : Controller
     {
         private readonly ILogger<AddressFormController> _logger;
 
@@ -19,8 +20,10 @@ namespace Address_Design.Controllers
             _logger = logger;
         }
 
+        //
+        // GET: /AddressForm/
         [HttpGet]
-        public string[] Get()
+        public string[] Index()
         {
             return new string[]
             {
@@ -28,6 +31,21 @@ namespace Address_Design.Controllers
                 "REPLACE ME"
             };
         }
+
+
+        //
+        // GET: /AddressForm/Get1
+        [HttpGet("Get1")]
+        public string[] Get1()
+        {
+            return new string[]
+            {
+                "This is a stub for a second GET",
+                "REPLACE ME"
+            };
+        }
+
+
 
     }
 }

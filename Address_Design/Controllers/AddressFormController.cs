@@ -29,6 +29,19 @@ namespace Address_Design.Controllers
         }
 
 
+
+        //
+        // GET: /AddressForm/FilledForm
+        [HttpGet("FilledForm")]
+        public IActionResult FilledForm(string name, int numTimes = 1)
+        {
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
+
+            return View();
+        }
+
+
         //
         // GET: /AddressForm/Get1
         [HttpGet("Get1")]

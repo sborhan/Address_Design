@@ -1,7 +1,76 @@
-﻿@{
-    ViewData["Title"] = "Index";
+﻿@model Address_Design.Models.Address
+@{
+   Layout = null;
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index</title>
+</head>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		// when the DOM has fully loaded...
+		$("#btnSubmit").bind("click", function() {
+			var onEventLaunchAddressForm = new PostAddress();
+  			onEventLaunchSquirrel.launchAddressView();
+		});
+	});
+	function PostAddress() {
+		this.launchAddressView = function() {
+			
+			// fetch values from input
+			var Street = $("Street").val();
+			var ZipCode = $("ZipCode").val();
+			
+			
+			// build json object
+			var address = {
+				Street: street,
+				ZipCode: zipCode,
+				
+			};
 
-<h2>Address Form</h2>
+			 $.ajax({
+		        type: "POST",
+		        url: "Controllers/PostAddress",
+		        traditional: true,
+		        contentType: 'application/json; charset=utf-8',
+		        data: JSON.stringify(address),
+		        success: function (data) { console.log(data) },
+		        error: function (data) { console.log(data) }		        
+    		});
+		
+		}
+	}
+	
+</script>
+<body>
 
-<p>Hello from our View Template!</p>
+<header>
+	<hgroup>
+		<h1>Address Form</h1>
+		<h3>Fill out and Submit!</h3>
+	</hgroup>
+</header>
+
+<section>
+	<p>Fill out your information and send it to our server.</p>
+	
+	<p><input type="text" required="required" id="Street Name" placeholder="Enter the Street name" /></p>
+	<p><input type="number" id="Zipcode" placeholder="Enter Zipcode (optional)" /></p>
+	<p><input type="number" required="required" id="County" placeholder="Enter the County name" /></p>
+	<p><input type="String" required="required" id="Gender" placeholder="M or F or None? (single letter only)" size="1" /></p>
+	<p><input type="string" required="required" id="Country" placeholder="Enter the Counrty name" /></p>
+	
+	<p><input id="btnSubmit" type="button" value="Submit!" /></p>
+	
+	<div id="status"></div>
+
+</section>
+
+</body>
+</html>
+
+
+

@@ -69,6 +69,15 @@ namespace Address_Design.Controllers
             }
         }
         #endregion
+
+
+        //GET: /AddressForm/GetForms
+        [HttpGet("GetForms")]
+        public IActionResult GetForms()
+        {
+            return null;
+        }
+
     }
 
 

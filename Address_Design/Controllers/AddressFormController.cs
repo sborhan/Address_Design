@@ -15,6 +15,9 @@ namespace Address_Design.Controllers
     [ApiController]
     public class AddressFormController : Controller
     {
+
+        public object cachedJson;
+
         //public ActionResult Index()
         //{
         //    return View();

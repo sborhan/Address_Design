@@ -1,0 +1,48 @@
+{
+  "USA": [
+    {
+      "Recipeint": [
+        {
+          "DataType": "String",
+          "Required": false
+        }
+      ],
+      "Company": [
+        {
+          "DataType": "String",
+          "Required": false
+        }
+      ],
+      "Address Line 1": [
+        {
+          "DataType": "String",
+          "Required": true
+        }
+      ],
+      "Unit/Apt": [
+        {
+          "DataType": "String",
+          "Required": false
+        }
+      ],
+      "City": [
+        {
+          "DataType": "String",
+          "Required": true
+        }
+      ],
+      "State": [
+        {
+          "DataType": "String",
+          "Required": true
+        }
+      ],
+      "ZipCode": [
+        {
+          "DataType": "int",
+          "Required": true
+        }
+      ]
+    }
+  ]
+}

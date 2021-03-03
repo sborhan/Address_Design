@@ -1,6 +1,6 @@
 ﻿@model Address_Design.Models.Address
 @{
-   Layout = null;
+   
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +13,7 @@
 		// when the DOM has fully loaded...
 		$("#btnSubmit").bind("click", function() {
 			var onEventLaunchAddressForm = new PostAddress();
-			onEventLaunchSquirrel.launchAddressView();
+			onEventLaunchAddressForm.launchAddressView();
 		});
 	});
 	function PostAddress() {
@@ -33,7 +33,7 @@
 
 			 $.ajax({
 				type: "POST",
-				url: "Controllers/PostAddress",
+				url: "AddressFormController/PostAddress",
 				traditional: true,
 				contentType: 'application/json; charset=utf-8',
 				data: JSON.stringify(address),

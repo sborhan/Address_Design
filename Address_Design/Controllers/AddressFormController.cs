@@ -83,7 +83,9 @@ namespace Address_Design.Controllers
         [HttpGet("GetForms")]
         public AllForms GetForms()
         {
-            cachedForms = JsonConvert.DeserializeObject<AllForms>(System.IO.File.ReadAllText(@"..\Address_Design\Data\Forms.json"));
+            //TODO plug int server call here, store response as jsonResponse or String 
+
+            cachedForms = JsonConvert.DeserializeObject<AllForms>(System.IO.File.ReadAllText(@"..\Address_Design\Data\Forms.json")); //TODO Replace file with server response
 
             return cachedForms;
         }

@@ -69,7 +69,7 @@ namespace Address_Design
 
                 endpoints.MapBlazorHub();
 
-                endpoints.MapFallbackToController("Blazor", "AddressForm");
+                endpoints.MapFallbackToController("Blazor", "AddressFormController");
             });
 
             app.UseSwagger();

@@ -1,20 +1,12 @@
 ﻿@model Address_Design.Models.Address
+@using Address_Design.Components
 @{
 
 }
-@using Address_Design.Components
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Index</title>
-
-    <component type="typeof(Counter)" render-mode="ServerPrerendered"
-               param-InitialValue="InitialValue" />
-
-    @functions {
-        [BindProperty(SupportsGet = true)]
-        public int InitialValue { get; set; }
-    }
 </head>
 
 <script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
@@ -80,7 +72,7 @@
 
     </section>
 
-
+    @await Component.InvokeAsync("Counter", {Anonymous Type Containing Parameters})
 </body>
 
 </html>

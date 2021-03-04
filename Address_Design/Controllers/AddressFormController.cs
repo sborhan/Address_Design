@@ -23,7 +23,7 @@ namespace Address_Design.Controllers
     public class AddressFormController : Controller
     {
 
-        public AddressForm cachedForms;
+        public AllForms cachedForms;
 
         //public ActionResult Index()
         //{
@@ -80,11 +80,11 @@ namespace Address_Design.Controllers
 
         //GET: /AddressForm/GetForms
         [HttpGet("GetForms")]
-        public IActionResult GetForms()
+        public AllForms GetForms()
         {
-            cachedForms = JsonConvert.DeserializeObject<AddressForm>(System.IO.File.ReadAllText(@"..\Data\Forms.json"));
+            cachedForms = JsonConvert.DeserializeObject<AllForms>(System.IO.File.ReadAllText(@"..\Address_Design\Data\Forms.json"));
 
-            return null;
+            return cachedForms;
         }
 
     }

@@ -14,6 +14,6 @@ namespace Address_Design.Data
         {
         }
 
-        public DbSet<Address_Design.Models.AddressForm> AddressForm { get; set; }
+        public DbSet<Address_Design.Models.Form> AddressForm { get; set; }
     }
 }

@@ -72,7 +72,11 @@
 
     </section>
 
-    
+   
+    <div>
+        @await Component.InvokeAsync("PriorityList", new { maxPriority = 2, isDone = false })
+    </div>
+
 </body>
 
 </html>

@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Address_Design.Data;
+using Address_Design.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.OpenApi.Models;
 
@@ -46,6 +47,9 @@ namespace Address_Design
 
             services.AddMvc();
             services.Configure<RazorPagesOptions>(options => options.RootDirectory = "/Views");
+
+            services.AddDbContext<ToDoContext>(options =>
+                options.UseInMemoryDatabase("db"));
 
 
         }

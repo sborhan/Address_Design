@@ -1,13 +1,15 @@
 ﻿@model Address_Design.Models.Address
 @{
-   
+    Layout = null;
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Index</title>
 </head>
+
 <script type="text/javascript" src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		// when the DOM has fully loaded...
@@ -20,20 +22,20 @@
 		this.launchAddressView = function() {
 			
 			// fetch values from input
-			var Street = $("Street").val();
-			var ZipCode = $("ZipCode").val();
+			var Street1 = $("Street").val();
+			var ZipCode1 = $("ZipCode").val();
 			
 			
 			// build json object
 			var address = {
-				Street: street,
-				ZipCode: zipCode,
+				Street: Street1,
+				ZipCode: ZipCode1,
 				
 			};
 
 			 $.ajax({
 				type: "POST",
-				url: "AddressFormController/PostAddress",
+				url: "AddressForm",
 				traditional: true,
 				contentType: 'application/json; charset=utf-8',
 				data: JSON.stringify(address),

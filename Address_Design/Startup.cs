@@ -44,7 +44,10 @@ namespace Address_Design
             services.AddDbContext<Address_DesignContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("Address_DesignContext")));
 
-            services.Configure<RazorPagesOptions>(options => options.RootDirectory = "/Pages"); //TODO Changed this from /Pages
+            services.AddMvc();
+            services.Configure<RazorPagesOptions>(options => options.RootDirectory = "/Views");
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,17 +64,6 @@ namespace Address_Design
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=AddressForm}/{action=Index}/{id?}");
-
-                endpoints.MapBlazorHub();
-
-                endpoints.MapFallbackToController("Blazor", "AddressFormController");
-            });
-
             app.UseSwagger();
 
             app.UseSwaggerUI(
@@ -80,6 +72,18 @@ namespace Address_Design
                     options.SwaggerEndpoint("/swagger/AddressForm/swagger.json", "AddressForm");
                     options.RoutePrefix = string.Empty;
                 });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=AddressForm}/{action=Index}/{id?}");
+
+                endpoints.MapBlazorHub();
+
+                endpoints.MapFallbackToPage("/AddressForm/_Host");
+            });
+
         }
     }
 }

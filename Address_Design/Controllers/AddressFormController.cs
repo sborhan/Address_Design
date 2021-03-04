@@ -18,7 +18,7 @@ using System.Text;
 
 namespace Address_Design.Controllers
 {
-    [Route("[controller]")]
+    [Route("AddressForm")]
     [ApiController]
     public class AddressFormController : Controller
     {
@@ -88,10 +88,6 @@ namespace Address_Design.Controllers
             return cachedForms;
         }
 
-        public IActionResult Blazor()
-        {
-            return View("_Host");
-        }
 
     }
 

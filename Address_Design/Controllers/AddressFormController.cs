@@ -3,11 +3,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using System.Text.Encodings.Web;
 using System.Web;
 using Address_Design.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Net.Http.Headers;
+using System.Text;
 
 namespace Address_Design.Controllers
 {
@@ -16,7 +23,7 @@ namespace Address_Design.Controllers
     public class AddressFormController : Controller
     {
 
-        public object cachedJson;
+        public AddressForm cachedForms;
 
         //public ActionResult Index()
         //{
@@ -75,6 +82,8 @@ namespace Address_Design.Controllers
         [HttpGet("GetForms")]
         public IActionResult GetForms()
         {
+            cachedForms = JsonConvert.DeserializeObject<AddressForm>(System.IO.File.ReadAllText(@"..\Data\Forms.json"));
+
             return null;
         }
 
@@ -127,6 +136,6 @@ namespace Address_Design.Controllers
 
 
 
-    }
+}
 ;
 

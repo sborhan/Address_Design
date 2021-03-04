@@ -1,48 +1,80 @@
 {
-  "USA": [
+  "forms": [
     {
-      "Recipient": [
+      "country": "USA",
+      "fields": [
         {
-          "DataType": "String",
-          "Required": false
+          "name": "Recipient",
+          "Type": "string",
+          "required": false
+        },
+        {
+          "name": "Company",
+          "Type": "int",
+          "required": false
+        },
+        {
+          "name": "Address Line 1",
+          "Type": "string",
+          "required": true
+        },
+        {
+          "name": "Unit/Apt",
+          "Type": "String",
+          "required": false
+        },
+        {
+          "name": "City",
+          "Type": "String",
+          "required": true
+        },
+        {
+          "name": "State",
+          "Type": "String",
+          "required": true
+        },
+        {
+          "name": "ZipCode",
+          "Type": "int",
+          "required": true
         }
-      ],
-      "Company": [
+      ]
+    },
+    {
+      "country": "AUS",
+      "fields": [
         {
-          "DataType": "String",
-          "Required": false
-        }
-      ],
-      "Address Line 1": [
+          "name": "Recipient",
+          "Type": "string",
+          "required": false
+        },
         {
-          "DataType": "String",
-          "Required": true
-        }
-      ],
-      "Unit/Apt": [
+          "name": "Unit/Apt",
+          "Type": "String",
+          "required": false
+        },
         {
-          "DataType": "String",
-          "Required": false
-        }
-      ],
-      "City": [
+          "name": "Address Line 1",
+          "Type": "string",
+          "required": true
+        },
         {
-          "DataType": "String",
-          "Required": true
-        }
-      ],
-      "State": [
+          "name": "City",
+          "Type": "String",
+          "required": true
+        },
         {
-          "DataType": "String",
-          "Required": true
-        }
-      ],
-      "ZipCode": [
+          "name": "Territory",
+          "Type": "String",
+          "required": true
+        },
         {
-          "DataType": "int",
-          "Required": true
+          "name": "Postal Code",
+          "Type": "String",
+          "required": true
         }
       ]
     }
   ]
 }
+

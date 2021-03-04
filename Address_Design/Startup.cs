@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Address_Design.Data;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.OpenApi.Models;
 
 
@@ -31,6 +32,8 @@ namespace Address_Design
         {
             services.AddControllersWithViews();
 
+            services.AddServerSideBlazor();
+
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
@@ -40,6 +43,8 @@ namespace Address_Design
 
             services.AddDbContext<Address_DesignContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("Address_DesignContext")));
+
+            services.Configure<RazorPagesOptions>(options => options.RootDirectory = "/Pages"); //TODO Changed this from /Pages
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +66,10 @@ namespace Address_Design
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=AddressForm}/{action=Index}/{id?}");
+
+                endpoints.MapBlazorHub();
+
+                endpoints.MapFallbackToController("Blazor", "AddressForm");
             });
 
             app.UseSwagger();

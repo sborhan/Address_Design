@@ -41,6 +41,7 @@ namespace Address_Design.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            GetForms(); //Call API to retrieve forms from server and cache them locally. 
             return View();
         }
 
@@ -85,6 +86,11 @@ namespace Address_Design.Controllers
             cachedForms = JsonConvert.DeserializeObject<AllForms>(System.IO.File.ReadAllText(@"..\Address_Design\Data\Forms.json"));
 
             return cachedForms;
+        }
+
+        public IActionResult Blazor()
+        {
+            return View("_Host");
         }
 
     }

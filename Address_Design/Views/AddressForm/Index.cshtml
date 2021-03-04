@@ -22,8 +22,8 @@
 		this.launchAddressView = function() {
 			
 			// fetch values from input
-			var Street1 = $("Street").val();
-			var ZipCode1 = $("ZipCode").val();
+			var Street1 = $("#Street").val();
+			var ZipCode1 = $("#ZipCode").val();
 			
 			
 			// build json object
@@ -59,7 +59,7 @@
 <section>
 	<p>Fill out your information and send it to our server.</p>
 	
-	<p><input type="text" required="required" id="Street Name" placeholder="Enter the Street name" /></p>
+	<p><input type="text" required="required" id="Street" placeholder="Enter the Street name" /></p>
 	<p><input type="number" id="Zipcode" placeholder="Enter Zipcode (optional)" /></p>
 	<p><input type="number" required="required" id="County" placeholder="Enter the County name" /></p>
 	<p><input type="String" required="required" id="Gender" placeholder="M or F or None? (single letter only)" size="1" /></p>

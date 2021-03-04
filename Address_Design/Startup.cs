@@ -40,14 +40,16 @@ namespace Address_Design
             {
                 c.SwaggerDoc("AddressForm", new OpenApiInfo {Title = "AddressForm API", Version = "v1"});
 
-            });         
+            });
 
+            // This is just got ToDoContext to work, can pre removed when SQL server is in place
             services.AddDbContext<Address_DesignContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("Address_DesignContext")));
 
             services.AddMvc();
             services.Configure<RazorPagesOptions>(options => options.RootDirectory = "/Views");
 
+            // This is just got ToDoContext to work, can pre removed when SQL server is in place
             services.AddDbContext<ToDoContext>(options =>
                 options.UseInMemoryDatabase("db"));
 

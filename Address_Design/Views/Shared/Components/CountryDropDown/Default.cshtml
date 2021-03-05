@@ -1,0 +1,14 @@
+﻿@using Address_Design.Models
+@using Microsoft.EntityFrameworkCore
+@model Address_Design.Controllers.AddressFormController
+
+
+<h3>Form</h3>
+<ul>
+    @{
+        foreach (var form in @ViewBag.cachedForms.forms)
+        {
+            <li>@form.country</li>
+        }
+    }
+</ul>

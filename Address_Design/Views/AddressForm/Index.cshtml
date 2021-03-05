@@ -1,5 +1,6 @@
 ﻿@model Address_Design.Models.Address
 @using Address_Design
+@using Address_Design.Controllers
 @{
 
 }
@@ -74,7 +75,7 @@
 
    
     <div>
-        @await Component.InvokeAsync("PriorityList", new { maxPriority = 2, isDone = false })
+        @await Component.InvokeAsync("CountryDropDown", @ViewBag.cachedForms);
     </div>
 
 </body>

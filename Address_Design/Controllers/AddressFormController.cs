@@ -87,6 +87,8 @@ namespace Address_Design.Controllers
 
             cachedForms = JsonConvert.DeserializeObject<AllForms>(System.IO.File.ReadAllText(@"..\Address_Design\Data\Forms.json")); //TODO Replace file with server response
 
+            ViewBag.cachedForms = cachedForms;
+
             return cachedForms;
         }
 

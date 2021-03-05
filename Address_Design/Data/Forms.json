@@ -1,80 +1,1864 @@
 {
   "forms": [
     {
-      "country": "USA",
+      "country": "Argentina",
       "fields": [
         {
-          "name": "Recipient",
+          "Name": "Recipient",
           "Type": "string",
-          "required": false
+          "Required": false
         },
         {
-          "name": "Company",
-          "Type": "int",
-          "required": false
-        },
-        {
-          "name": "Address Line 1",
+          "Name": "Address Line",
           "Type": "string",
-          "required": true
+          "Required": true
         },
         {
-          "name": "Unit/Apt",
-          "Type": "String",
-          "required": false
-        },
-        {
-          "name": "City",
-          "Type": "String",
-          "required": true
-        },
-        {
-          "name": "State",
-          "Type": "String",
-          "required": true
-        },
-        {
-          "name": "ZipCode",
+          "Name": "Building Number",
           "Type": "int",
-          "required": true
+          "Required": false
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
         }
       ]
     },
     {
-      "country": "AUS",
+      "country": "Australia",
       "fields": [
         {
-          "name": "Recipient",
+          "Name": "Recipient",
           "Type": "string",
-          "required": false
+          "Required": false
         },
         {
-          "name": "Unit/Apt",
-          "Type": "String",
-          "required": false
-        },
-        {
-          "name": "Address Line 1",
+          "Name": "Address Line",
           "Type": "string",
-          "required": true
+          "Required": true
         },
         {
-          "name": "City",
-          "Type": "String",
-          "required": true
+          "Name": "City",
+          "Type": "string",
+          "Required": true
         },
         {
-          "name": "Territory",
-          "Type": "String",
-          "required": true
+          "Name": "State",
+          "Type": "string",
+          "Required": true
         },
         {
-          "name": "Postal Code",
-          "Type": "String",
-          "required": true
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Austria",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Belgium",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": false
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Brazil",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": false
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Province Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Britain",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "County",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Canada",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Province",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Channel Islands",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "County",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Chile",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": false
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Province",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "China",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "District",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Province",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Taiwan",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Street Sction",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Island",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Costa Rica",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Province",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Canton",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "District",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Czech Republic",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Post Office Identifier",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Denmark",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Estonia",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Fiji",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Finland",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal District",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Formosa",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Island",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "France",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Germany",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Greenland",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal District",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Hong Kong",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "District",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Iceland",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Locality",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "India",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Indonesia",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Ireland",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "District",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Israel",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Italy",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Province Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Japan",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Subarea Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Subarea",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Perfecture",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "South Korea",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "House Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Subdivision",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Province",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Latvia",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Locality",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Luxembourg",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "House Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Malaysia",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "House Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "State",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Mexico",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Apartment Number",
+          "Type": "int",
+          "Required": false
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "NeighBorhood",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "State",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Netherlands",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": false
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Locality",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "New Zealand",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Suburb",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Northern Ireland",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "County",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Norway",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Oman",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "BP",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Post Office Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Pakistan",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Poland",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Locality",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Portugal",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Subdivision",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Puerto Rico",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "State",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Zip Code",
+          "Type": "int",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Romania",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "County",
+          "Type": "string",
+          "Required": false
+        }
+      ]
+    },
+    {
+      "country": "Russia",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "House Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Apartment Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "County",
+          "Type": "string",
+          "Required": false
+        }
+      ]
+    },
+    {
+      "country": "Scotland",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "County",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Singapore",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "South Africa",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Suburb",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Province",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Spain",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "city",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Sweden",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "House Number",
+          "Type": "int",
+          "Required": false
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "city",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Switzerland",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": false
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "city",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Ukraine",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "House Number",
+          "Type": "int",
+          "Required": false
+        },
+        {
+          "Name": "Apartment Number",
+          "Type": "int",
+          "Required": false
+        },
+        {
+          "Name": "city",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "United States",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Unit/Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "State",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Zip Code",
+          "Type": "int",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Uruguay",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Province",
+          "Type": "string",
+          "Required": false
+        }
+      ]
+    },
+    {
+      "country": "Wales",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "County",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Postal Code",
+          "Type": "string",
+          "Required": true
         }
       ]
     }
   ]
 }
-

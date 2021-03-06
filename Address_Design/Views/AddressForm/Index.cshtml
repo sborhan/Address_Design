@@ -73,7 +73,72 @@
 
     </section>
 
-   
+   <form>
+    <label for="browser">Choose your Country from the list:</label>
+    <input list="browsers" name="browser" id="browser">
+     <datalist id="browsers">
+            <option value="Argentina">
+            <option value="Australia">
+            <option value="Austria">
+            <option value="Austria">
+            <option value="Belgium">
+            <option value="Brazil">
+            <option value="Britain">
+            <option value="Canada">
+            <option value="Channel Islands">
+            <option value="Chile">
+            <option value="China">
+            <option value="Taiwan">
+            <option value="Costa Rica">
+            <option value="Czech Republic">
+            <option value="Denmark">
+            <option value="Estonia">
+            <option value="Fiji">
+            <option value="Finland">
+            <option value="Formosa">
+            <option value="France">
+            <option value="Germany">
+            <option value="Greenland">
+            <option value="Hong Kong">
+            <option value="Iceland">
+            <option value="India">
+            <option value="Indonesia">
+            <option value="Ireland">
+            <option value="Israel">
+            <option value="Italy">
+            <option value="Japan">
+            <option value="South Korea">
+            <option value="Latvia">
+            <option value="Luxembourg">
+            <option value="Malaysia">
+            <option value="Mexico">
+            <option value="Netherlands">
+            <option value="New Zealand">
+            <option value="Northern Ireland">
+            <option value="Norway">
+            <option value="Oman">
+            <option value="Pakistan">
+            <option value="Poland">
+            <option value="Portugal">
+            <option value="Puerto Rico">
+            <option value="Romania">
+            <option value="Russia">
+            <option value="Scotland">
+            <option value="Singapore">
+            <option value="South Africa">
+            <option value="Spain">
+            <option value="Sweden">
+            <option value="Switzerland">
+            <option value="Ukraine">
+            <option value="United States">
+            <option value="Uruguay">
+            <option value="Wale">
+
+     </datalist>
+
+ </form>
+      
+
     <div>
         @await Component.InvokeAsync("CountryDropDown", @ViewBag.cachedForms);
     </div>

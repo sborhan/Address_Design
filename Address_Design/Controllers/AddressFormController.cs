@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Text.Encodings.Web;
 using System.Web;
 using Address_Design.Models;
+using Microsoft.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Microsoft.AspNetCore.Hosting;
@@ -49,18 +51,54 @@ namespace Address_Design.Controllers
         public JsonResult PostAddress(Address incomingAddress)
         {
             Address status = null;
+            string connStr = "server=127.0.0.1;user=root;database=addresses;port=3306;password=usingMYSQL1!";
+            MySqlConnection conn = new MySqlConnection(connStr);
             try
             {
-                saveAddress(incomingAddress);
-                status = new Address() { Street = "main street", ZipCode = "9805" };
+                Console.WriteLine("Connecting to MySQL...");
+                conn.Open();
+
+                string sql = "SELECT g.Recipient, g.AddressLine, g.City, g.State, g.ZipCode FROM global_addresses g WHERE g.AddressLine = '123 Main St.'";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    for (int i = 0; i < rdr.FieldCount; i++)
+                    {
+                        Console.WriteLine(rdr.GetValue(i).ToString());
+                    }
+                }
+
+                rdr.Close();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                new NotImplementedException();
+                Console.WriteLine(ex.ToString());
             }
+
+            conn.Close();
+            Console.WriteLine("Done.");
 
             return Json(status);
         }
+
+        //[HttpPost]
+        //public JsonResult PostAddress(Address incomingAddress)
+        //{
+        //    Address status = null;
+        //    try
+        //    {
+        //        saveAddress(incomingAddress);
+        //        status = new Address() { Street = "main street", ZipCode = "9805" };
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        new NotImplementedException();
+        //    }
+
+        //    return Json(status);
+        //}
 
         #region privateHelpers
         private Boolean saveAddress(Address incomingAddress)

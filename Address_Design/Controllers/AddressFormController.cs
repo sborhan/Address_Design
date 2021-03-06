@@ -17,6 +17,7 @@ using Newtonsoft.Json.Linq;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Net.Http.Headers;
 using System.Text;
+using System.Web.Helpers;
 
 namespace Address_Design.Controllers
 {
@@ -58,19 +59,25 @@ namespace Address_Design.Controllers
                 Console.WriteLine("Connecting to MySQL...");
                 conn.Open();
 
-                string sql = "SELECT g.Recipient, g.AddressLine, g.City, g.State, g.ZipCode FROM global_addresses g WHERE g.AddressLine = '123 Main St.'";
+                string sql = constructQuery(incomingAddress);
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
-
-                while (rdr.Read())
-                {
-                    for (int i = 0; i < rdr.FieldCount; i++)
+                
+                if (rdr.HasRows) {
+                    while (rdr.Read())
                     {
-                        Console.WriteLine(rdr.GetValue(i).ToString());
+                        for (int i = 0; i < rdr.FieldCount; i++)
+                        {
+                            Console.WriteLine(rdr.GetValue(i).ToString());
+                        }
                     }
-                }
 
-                rdr.Close();
+                    rdr.Close();
+                }
+                else
+                {
+                    Console.WriteLine("There were no matching addresses found!");
+                }
             }
             catch (Exception ex)
             {
@@ -101,19 +108,41 @@ namespace Address_Design.Controllers
         //}
 
         #region privateHelpers
-        private Boolean saveAddress(Address incomingAddress)
+        private string constructQuery(Address incomingAddress)
         {
-            if (incomingAddress.Street is null)
+            string json = JsonConvert.SerializeObject(incomingAddress);
+            //Console.WriteLine(json);
+            JObject jsonObj = JObject.Parse(json);
+
+            IList<string> keys = jsonObj.Properties().Select(p => p.Name).ToList();
+            
+            string sql = "SELECT ";
+            
+            foreach (string key in keys)
             {
-                // do something...
-                return false;
+                sql += "g." + key + ", ";
             }
-            else
-            {
-                // do something positive!
-                return true;
-            }
+            sql = sql.Remove(sql.LastIndexOf(","));
+            sql += " FROM global_addresses g WHERE g.AddressLine='";
+            sql += jsonObj.GetValue("AddressLine") + "'";
+            Console.WriteLine(sql);
+
+            return sql;
         }
+
+        //private Boolean saveAddress(Address incomingAddress)
+        //{
+        //    if (incomingAddress.Street is null)
+        //    {
+        //        // do something...
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        // do something positive!
+        //        return true;
+        //    }
+        //}
         #endregion
 
 

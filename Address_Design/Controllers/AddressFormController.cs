@@ -1,7 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
-using MySql.Data.MySqlClient;
-
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;

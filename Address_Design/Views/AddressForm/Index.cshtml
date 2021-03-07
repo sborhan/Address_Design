@@ -29,10 +29,17 @@
 
             $.get("/AddressForm/CountryFormatReturn", { country: strUser }, function (data) {
                 var childElement = null;
+                
                 for (i = 0; i < data.length; i++) {
                     childElement = document.createElement('input');
+                    if (data[i] == "Country") {
+                        childElement.value = strUser;
+                    }
                     childElement.placeholder = data[i];
+                    childElement.id = data[i];
                     parentElement.appendChild(childElement);
+                    var linebreak = document.createElement("br");
+                    parentElement.appendChild(linebreak);
                 }
             });  
             

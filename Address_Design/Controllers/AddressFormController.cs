@@ -163,12 +163,13 @@ namespace Address_Design.Controllers
                 result.Add("Country");
                 result.Add("State");
                 result.Add("City");
-                result.Add("Street");
+                result.Add("AddressLine");
+                result.Add("ZipCode");
 
             }
             else
             {
-                result.Add("Test");
+                result.Add("Country");
             }
             return result;
         }

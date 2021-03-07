@@ -15,7 +15,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         // when the DOM has fully loaded...
-        $("#btnSubmit").bind("click", function () {
+        $("#narrowButton").bind("click", function () {
             var onEventLaunchAddressForm = new PostAddress();
             onEventLaunchAddressForm.launchAddressView();
         });
@@ -32,6 +32,7 @@
                 
                 for (i = 0; i < data.length; i++) {
                     childElement = document.createElement('input');
+                    childElement.className += 'activeInput';
                     if (data[i] == "Country") {
                         childElement.value = strUser;
                     }
@@ -47,16 +48,24 @@
     });
     function PostAddress() {
         this.launchAddressView = function () {
+            var inputs = document.getElementsByClassName('activeInput')
+            var address = {};
+            var id;
+            for (var i = 0; i < inputs.length; i++) {
+                id = inputs[i].id;
+                idNoSpace = id.replace(/\s/g, '');
+                address[idNoSpace] = document.getElementById(id).value;
+            }
 
             // fetch values from input
-            var Street1 = document.getElementById("Address Line").value
+            //var Street1 = document.getElementById("Address Line").value
             //var ZipCode1 = $("#Zip Code").value();
 
             // build json object
-            var address = {
-                AddressLine: Street1
-                //ZipCode: ZipCode1,
-            };
+            //var address = {
+            //    AddressLine: Street1
+            //    //ZipCode: ZipCode1,
+            //};
 
             $.ajax({
                 type: "POST",
@@ -170,9 +179,9 @@
         </div>
         <br />
         <p>
-            <input id="btnSubmit" type="button" value="Narrow Search!" />
+            <input id="narrowButton" type="button" value="Narrow Search!" />
             &nbsp;
-            <input id="btnSubmit" type="button" value="Global Search!" />
+            <input id="globalButton" type="button" value="Global Search!" />
         </p>
         <div id="dvItems" style="font-size:24px;"></div>
 

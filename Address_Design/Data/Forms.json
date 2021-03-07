@@ -374,7 +374,7 @@
           "Required": true
         },
         {
-          "Name": "Street Sction",
+          "Name": "Street Section",
           "Type": "string",
           "Required": true
         },
@@ -939,7 +939,7 @@
           "Required": true
         },
         {
-          "Name": "Perfecture",
+          "Name": "Prefecture",
           "Type": "string",
           "Required": true
         },

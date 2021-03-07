@@ -49,15 +49,13 @@
         this.launchAddressView = function () {
 
             // fetch values from input
-            var Street1 = $("#AddressLine").val();
-            var ZipCode1 = $("#ZipCode").val();
-            var Country1 = $("#Country").val();
+            var Street1 = document.getElementById("Address Line").value
+            //var ZipCode1 = $("#Zip Code").value();
 
             // build json object
             var address = {
-                AddressLine: Street1,
-                ZipCode: ZipCode1,
-                Country: Country1
+                AddressLine: Street1
+                //ZipCode: ZipCode1,
             };
 
             $.ajax({
@@ -170,7 +168,8 @@
 
         </div>
 
-        <p><input id="btnSubmit" type="button" value="Submit!" /></p>
+        <p><input id="btnSubmit" type="button" value="Narrow Search!" /></p>
+        <p><input id="btnSubmit" type="button" value="Global Search!" /></p>
         <div id="dvItems" style="font-size:24px;"></div>
 
     </section>

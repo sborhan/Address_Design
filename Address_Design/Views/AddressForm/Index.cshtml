@@ -22,13 +22,36 @@
         $("#chooseCountry").bind("click", function () {
             var e = document.getElementById("browser");
             var strUser = e.value;
-            alert(strUser);
+            
 
             var parentElement = document.getElementById('formsection');
             document.getElementById('formsection').innerHTML = "";
-            var childElement = document.createElement('p');
-            var appendChildElement = parentElement.appendChild(childElement)
-            appendChildElement.innerHTML = "test";
+            
+            //var MailingForm = CountryFormatReturn(strUser);
+
+            $.ajax({
+                type: "POST",                   // Type of Request, GET,POST, DELETE etc.
+                url: "Default.aspx/CountryFormatReturn",   //URL which we need to call
+                data: '{country: ' + $("#strUser").val() + '}', //paramter to pass
+                contentType: "application/json; charset=utf-8", // dataType seding to server
+                dataType: "json", // data returning from server
+                success: function (data) { //function to call on success
+                    //success, do something here using returned response
+                    alert(strUser);
+
+                },
+                failure: function (response) {
+                    alert("Failed");
+                }
+            });
+            
+            
+            //var childElement = null;
+            //foreach(var item in MailingForm) {
+            //    childElement = document.createElement('input');
+            //}
+            //var appendChildElement = parentElement.appendChild(childElement)
+            //appendChildElement.innerHTML = "test";
         });
     });
     function PostAddress() {
@@ -148,8 +171,7 @@
             <option value="Uruguay">Uruguay</option>
             <option value="Wale">Wale</option>
         </select>
-        <input id="countrySubmit" type="button" value="Get Form!" />
-        <p><input id="chooseCountry" type="button" value="Choose!" /></p>
+        <input id="chooseCountry" type="button" value="Get Form!" />
     </form>
 
     <section>

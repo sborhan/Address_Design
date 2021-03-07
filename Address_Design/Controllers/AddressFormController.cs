@@ -1,23 +1,14 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Security.Policy;
-using System.Threading.Tasks;
-using System.Text.Encodings.Web;
-using System.Web;
 using Address_Design.Models;
-using Microsoft.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Net.Http.Headers;
-using System.Text;
-using System.Web.Helpers;
+using System.Collections;
+using javax.jws;
 
 namespace Address_Design.Controllers
 {
@@ -47,6 +38,7 @@ namespace Address_Design.Controllers
             GetForms(); //Call API to retrieve forms from server and cache them locally. 
             return View();
         }
+
 
         [HttpPost]
         public JsonResult PostAddress(Address incomingAddress)
@@ -161,6 +153,26 @@ namespace Address_Design.Controllers
             return cachedForms;
         }
 
+        [WebMethod]
+        public static ArrayList CountryFormatReturn(String country)
+        {
+            ArrayList result = new ArrayList();
+
+            if (country == "United States")
+            {
+                result.Add("Country");
+                result.Add("State");
+                result.Add("City");
+                result.Add("Street");
+
+            }
+            else
+            {
+                result.Add("Test");
+            }
+            
+            return result;
+        }
 
     }
 
@@ -204,12 +216,6 @@ namespace Address_Design.Controllers
     //    {
     //        return HtmlEncoder.Default.Encode($"Hello {name}, ID: {ID}");
     //    }
-
-
-
-
-
-
 
 }
 ;

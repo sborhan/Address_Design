@@ -19,6 +19,11 @@
             var onEventLaunchAddressForm = new PostAddress();
             onEventLaunchAddressForm.launchAddressView();
         });
+        $("#chooseCountry").bind("click", function () {
+            var e = document.getElementById("browser");
+            var strUser = e.value;
+            alert(strUser);
+        });
     });
     function PostAddress() {
         this.launchAddressView = function () {
@@ -40,8 +45,13 @@
                 url: "AddressForm",
                 traditional: true,
                 contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
                 data: JSON.stringify(address),
-                success: function (data) { console.log(data) },
+                success: function (data) {
+                    var dvItems = $("#dvItems");
+                    dvItems.empty();
+                    $('<h1>').append(data).appendTo(dvItems);
+                },
                 error: function (data) { console.log(data) }
             });
 
@@ -64,7 +74,6 @@
     }
 </script>
 
-
 <body>
 
     <header>
@@ -74,91 +83,83 @@
         </hgroup>
     </header>
 
-    <section>
-        <p>Fill out your information and send it to our server.</p>
+    <form>
+        <label for="browser">Choose your Country from the list:</label>
+        <select id="browser">
+            <option value="Argentina">Argentina</option>
+            <option value="Australia">Australia</option>
+            <option value="Austria">Austria</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Britain">Britain</option>
+            <option value="Canada">Canada</option>
+            <option value="Channel Islands">Channel Islands</option>
+            <option value="Chile">Chile</option>
+            <option value="China">China</option>
+            <option value="Taiwan">Taiwan</option>
+            <option value="Costa Rica">Costa Rica</option>
+            <option value="Czech Republic">Czech Republic</option>
+            <option value="Denmark">Denmark</option>
+            <option value="Estonia">Estonia</option>
+            <option value="Fiji">Fiji</option>
+            <option value="Finland">Finland</option>
+            <option value="Formosa">Formosa</option>
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
+            <option value="Greenland">Greenland</option>
+            <option value="Hong Kong">Hong Kong</option>
+            <option value="Iceland">Iceland</option>
+            <option value="India">India</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Ireland">Ireland</option>
+            <option value="Israel">Israel</option>
+            <option value="Italy">Italy</option>
+            <option value="Japan">Japan</option>
+            <option value="South Korea">South Korea</option>
+            <option value="Latvia">Latvia</option>
+            <option value="Luxembourg">Luxembourg</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Northern Ireland">Northern Ireland</option>
+            <option value="Norway">Norway</option>
+            <option value="Oman">Oman</option>
+            <option value="Pakistan">Pakistan</option>
+            <option value="Poland">Poland</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Puerto Rico">Puerto Rico</option>
+            <option value="Romania">Romania</option>
+            <option value="Russia">Russia</option>
+            <option value="Scotland">Scotland</option>
+            <option value="Singapore">Singapore</option>
+            <option value="South Africa">South Africa</option>
+            <option value="Spain">Spain</option>
+            <option value="Sweden">Sweden</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="Ukraine">Ukraine</option>
+            <option selected value="United States">United States</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Wale">Wale</option>
+        </select>
+        <input id="countrySubmit" type="button" value="Get Form!" />
+        <p><input id="chooseCountry" type="button" value="Choose!" /></p>
+    </form>
 
+    <section>
         <p><input type="text" required="required" id="AddressLine" placeholder="Enter the Street name" /></p>
         <p><input type="number" id="ZipCode" placeholder="Enter Zipcode (optional)" /></p>
-        <p><input type="number" required="required" id="County" placeholder="Enter the County name" /></p>
-        <p><input type="String" required="required" id="Gender" placeholder="M or F or None? (single letter only)" size="1" /></p>
         <p><input type="String" required="required" id="Country" placeholder="Enter the Country name" /></p>
 
         <p><input id="btnSubmit" type="button" value="Submit!" /></p>
 
-        <div id="status"></div>
+        <div id="dvItems" style="font-size:24px;"></div>
 
     </section>
 
-    <form>
-        <label for="browser">Choose your Country from the list:</label>
-        <input list="browsers" name="browser" id="browser">
-        <input id="countrySubmit" type="button" value="Get Form!" />
-        <datalist id="browsers">
-            <option value="Argentina">
-            <option value="Australia">
-            <option value="Austria">
-            <option value="Austria">
-            <option value="Belgium">
-            <option value="Brazil">
-            <option value="Britain">
-            <option value="Canada">
-            <option value="Channel Islands">
-            <option value="Chile">
-            <option value="China">
-            <option value="Taiwan">
-            <option value="Costa Rica">
-            <option value="Czech Republic">
-            <option value="Denmark">
-            <option value="Estonia">
-            <option value="Fiji">
-            <option value="Finland">
-            <option value="Formosa">
-            <option value="France">
-            <option value="Germany">
-            <option value="Greenland">
-            <option value="Hong Kong">
-            <option value="Iceland">
-            <option value="India">
-            <option value="Indonesia">
-            <option value="Ireland">
-            <option value="Israel">
-            <option value="Italy">
-            <option value="Japan">
-            <option value="South Korea">
-            <option value="Latvia">
-            <option value="Luxembourg">
-            <option value="Malaysia">
-            <option value="Mexico">
-            <option value="Netherlands">
-            <option value="New Zealand">
-            <option value="Northern Ireland">
-            <option value="Norway">
-            <option value="Oman">
-            <option value="Pakistan">
-            <option value="Poland">
-            <option value="Portugal">
-            <option value="Puerto Rico">
-            <option value="Romania">
-            <option value="Russia">
-            <option value="Scotland">
-            <option value="Singapore">
-            <option value="South Africa">
-            <option value="Spain">
-            <option value="Sweden">
-            <option value="Switzerland">
-            <option value="Ukraine">
-            <option value="United States">
-            <option value="Uruguay">
-            <option value="Wale">
-
-        </datalist>
-
-    </form>
-      
-
-    <div>
-        @await Component.InvokeAsync("CountryDropDown", @ViewBag.cachedForms);
-    </div>
+    @*<div>
+            @await Component.InvokeAsync("CountryDropDown", @ViewBag.cachedForms);
+        </div>*@
 
 </body>
 

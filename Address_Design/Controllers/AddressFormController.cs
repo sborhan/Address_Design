@@ -51,7 +51,7 @@ namespace Address_Design.Controllers
         [HttpPost]
         public JsonResult PostAddress(Address incomingAddress)
         {
-            Address status = null;
+            String result = "";
             string connStr = "server=127.0.0.1;user=root;database=addresses;port=3306;password=usingMYSQL1!";
             MySqlConnection conn = new MySqlConnection(connStr);
             try
@@ -68,6 +68,8 @@ namespace Address_Design.Controllers
                     {
                         for (int i = 0; i < rdr.FieldCount; i++)
                         {
+                            result += rdr.GetValue(i).ToString();
+                            result += " ";
                             Console.WriteLine(rdr.GetValue(i).ToString());
                         }
                     }
@@ -76,7 +78,7 @@ namespace Address_Design.Controllers
                 }
                 else
                 {
-                    Console.WriteLine("There were no matching addresses found!");
+                    result = "There were no matching addresses found!";
                 }
             }
             catch (Exception ex)
@@ -86,8 +88,8 @@ namespace Address_Design.Controllers
 
             conn.Close();
             Console.WriteLine("Done.");
-
-            return Json(status);
+            var test = Json(result);
+            return Json(result);
         }
 
         //[HttpPost]

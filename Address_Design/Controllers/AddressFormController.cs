@@ -17,7 +17,7 @@ namespace Address_Design.Controllers
     public class AddressFormController : Controller
     {
 
-        public AllForms cachedForms;
+        public AllForms cachedForms { set; get; }
 
         //public ActionResult Index()
         //{
@@ -156,22 +156,46 @@ namespace Address_Design.Controllers
         [HttpGet("CountryFormatReturn")]
         public ArrayList CountryFormatReturn(String country)
         {
+            cachedForms = JsonConvert.DeserializeObject<AllForms>(System.IO.File.ReadAllText(@"..\Address_Design\Data\Forms.json")); //TODO Replace file with server response
             ArrayList result = new ArrayList();
+            bool isExist = false;
 
-            if (country == "United States")
+            if (cachedForms != null)
             {
-                result.Add("Country");
-                result.Add("State");
-                result.Add("City");
-                result.Add("AddressLine");
-                result.Add("ZipCode");
+                foreach (var form in cachedForms.forms)
+                {
+                    if (form.country == country)
+                    {
+                        for (int i = 0; i < form.fields.Count; i++)
+                        {
+                            result.Add(form.fields[i].name);
+                            isExist = true;
+                        }
+                    }
 
+                    if (isExist)
+                    {
+                        break;
+                    }
+
+                }
             }
-            else
-            {
-                result.Add("Country");
-            }
+
             return result;
+            //if (country == "United States")
+            //{
+            //    result.Add("Country");
+            //    result.Add("State");
+            //    result.Add("City");
+            //    result.Add("AddressLine");
+            //    result.Add("ZipCode");
+
+            //}
+            //else
+            //{
+            //    result.Add("Country");
+            //}
+            //return result;
         }
 
     }

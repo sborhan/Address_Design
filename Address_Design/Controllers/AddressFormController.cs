@@ -153,8 +153,8 @@ namespace Address_Design.Controllers
             return cachedForms;
         }
 
-        [WebMethod]
-        public static ArrayList CountryFormatReturn(String country)
+        [HttpGet("CountryFormatReturn")]
+        public ArrayList CountryFormatReturn(String country)
         {
             ArrayList result = new ArrayList();
 
@@ -170,7 +170,6 @@ namespace Address_Design.Controllers
             {
                 result.Add("Test");
             }
-            
             return result;
         }
 

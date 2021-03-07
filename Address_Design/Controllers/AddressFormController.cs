@@ -121,8 +121,19 @@ namespace Address_Design.Controllers
                 }
             }
             sql = sql.Remove(sql.LastIndexOf(","));
-            sql += " FROM global_addresses g WHERE g.AddressLine='";
-            sql += jsonObj.GetValue("AddressLine") + "'";
+            sql += " FROM global_addresses g WHERE ";
+            foreach (string key in keys)
+            {
+                var passedValue = jsonObj.GetValue(key) is null ? null : jsonObj.GetValue(key).ToString();
+                if (!passedValue.Equals("") && !passedValue.Equals(" "))
+                {
+                    sql += "g." + key + "='";
+                    sql += jsonObj.GetValue(key) + "' AND ";
+                }
+            }
+            sql = sql.Remove(sql.LastIndexOf("AND"));
+            sql = sql.TrimEnd();
+            sql += ";";
             Console.WriteLine(sql);
 
             return sql;

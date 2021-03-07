@@ -59,6 +59,9 @@
                 } else {
                     address[idNoSpace] = document.getElementById(id).value;
                 }
+
+                var countrySelector = document.getElementById("browser");
+                address["country"] = countrySelector.value;
             }
 
             // fetch values from input

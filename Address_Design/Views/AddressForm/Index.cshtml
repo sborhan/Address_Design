@@ -23,6 +23,12 @@
             var e = document.getElementById("browser");
             var strUser = e.value;
             alert(strUser);
+
+            var parentElement = document.getElementById('formsection');
+            document.getElementById('formsection').innerHTML = "";
+            var childElement = document.createElement('p');
+            var appendChildElement = parentElement.appendChild(childElement)
+            appendChildElement.innerHTML = "test";
         });
     });
     function PostAddress() {
@@ -147,12 +153,11 @@
     </form>
 
     <section>
-        <p><input type="text" required="required" id="AddressLine" placeholder="Enter the Street name" /></p>
-        <p><input type="number" id="ZipCode" placeholder="Enter Zipcode (optional)" /></p>
-        <p><input type="String" required="required" id="Country" placeholder="Enter the Country name" /></p>
+        <div id="formsection">
+
+        </div>
 
         <p><input id="btnSubmit" type="button" value="Submit!" /></p>
-
         <div id="dvItems" style="font-size:24px;"></div>
 
     </section>

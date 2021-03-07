@@ -22,19 +22,20 @@
         $("#chooseCountry").bind("click", function () {
             var e = document.getElementById("browser");
             var strUser = e.value;
-            alert(strUser);
+            //alert(strUser);
 
             var parentElement = document.getElementById('formsection');
             document.getElementById('formsection').innerHTML = "";
-            
-            //var MailingForms = CountryFormatReturn(strUser);
 
-            //var childElement = null;
-            //foreach(var form in MailingForms) {
-            //    childElement = document.createElement('input');
-            //}
-            //var appendChildElement = parentElement.appendChild(childElement)
-            //appendChildElement.innerHTML = "test";
+            $.get("/AddressForm/CountryFormatReturn", { country: strUser }, function (data) {
+                var childElement = null;
+                for (i = 0; i < data.length; i++) {
+                    childElement = document.createElement('input');
+                    childElement.placeholder = data[i];
+                    parentElement.appendChild(childElement);
+                }
+            });  
+            
         });
     });
     function PostAddress() {

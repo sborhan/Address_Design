@@ -54,7 +54,11 @@
             for (var i = 0; i < inputs.length; i++) {
                 id = inputs[i].id;
                 idNoSpace = id.replace(/\s/g, '');
-                address[idNoSpace] = document.getElementById(id).value;
+                if (document.getElementById(id).value.length == 0) {
+                    address[idNoSpace] = " ";
+                } else {
+                    address[idNoSpace] = document.getElementById(id).value;
+                }
             }
 
             // fetch values from input

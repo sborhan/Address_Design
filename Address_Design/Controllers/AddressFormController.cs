@@ -111,10 +111,14 @@ namespace Address_Design.Controllers
             IList<string> keys = jsonObj.Properties().Select(p => p.Name).ToList();
             
             string sql = "SELECT ";
-            
+
             foreach (string key in keys)
             {
-                sql += "g." + key + ", ";
+                var passedValue = jsonObj.GetValue(key) is null ? null: jsonObj.GetValue(key).ToString();
+                if (!passedValue.Equals("")) 
+                {
+                    sql += "g." + key + ", ";
+                }
             }
             sql = sql.Remove(sql.LastIndexOf(","));
             sql += " FROM global_addresses g WHERE g.AddressLine='";

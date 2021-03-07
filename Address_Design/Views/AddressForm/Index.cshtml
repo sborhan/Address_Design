@@ -47,8 +47,24 @@
 
         }
     }
-
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // when the DOM has fully loaded...
+        $("#countrySubmit").bind("click", function () {
+            var onEventLaunchAddressForm = new GetForm();
+            onEventLaunchAddressForm.launchAddressView();
+        });
+    });
+    function GetForm() {
+        this.launchAddressView = function () {
+            AddressLine.type = "hidden";
+        }
+    }
+</script>
+
+
 <body>
 
     <header>
@@ -65,7 +81,7 @@
         <p><input type="number" id="ZipCode" placeholder="Enter Zipcode (optional)" /></p>
         <p><input type="number" required="required" id="County" placeholder="Enter the County name" /></p>
         <p><input type="String" required="required" id="Gender" placeholder="M or F or None? (single letter only)" size="1" /></p>
-        <p><input type="string" required="required" id="Country" placeholder="Enter the Country name" /></p>
+        <p><input type="String" required="required" id="Country" placeholder="Enter the Country name" /></p>
 
         <p><input id="btnSubmit" type="button" value="Submit!" /></p>
 
@@ -73,10 +89,11 @@
 
     </section>
 
-   <form>
-    <label for="browser">Choose your Country from the list:</label>
-    <input list="browsers" name="browser" id="browser">
-     <datalist id="browsers">
+    <form>
+        <label for="browser">Choose your Country from the list:</label>
+        <input list="browsers" name="browser" id="browser">
+        <input id="countrySubmit" type="button" value="Get Form!" />
+        <datalist id="browsers">
             <option value="Argentina">
             <option value="Australia">
             <option value="Austria">
@@ -134,9 +151,9 @@
             <option value="Uruguay">
             <option value="Wale">
 
-     </datalist>
+        </datalist>
 
- </form>
+    </form>
       
 
     <div>

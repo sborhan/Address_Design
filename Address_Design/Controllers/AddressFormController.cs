@@ -182,20 +182,6 @@ namespace Address_Design.Controllers
             }
 
             return result;
-            //if (country == "United States")
-            //{
-            //    result.Add("Country");
-            //    result.Add("State");
-            //    result.Add("City");
-            //    result.Add("AddressLine");
-            //    result.Add("ZipCode");
-
-            //}
-            //else
-            //{
-            //    result.Add("Country");
-            //}
-            //return result;
         }
 
     }

@@ -139,11 +139,6 @@
           "Required": true
         },
         {
-          "Name": "Building Number",
-          "Type": "int",
-          "Required": false
-        },
-        {
           "Name": "City",
           "Type": "string",
           "Required": true
@@ -169,12 +164,12 @@
           "Required": false
         },
         {
-          "Name": "Building Name",
+          "Name": "Address Line",
           "Type": "string",
-          "Required": false
+          "Required": true
         },
         {
-          "Name": "Address Line",
+          "Name": "Locality",
           "Type": "string",
           "Required": true
         },
@@ -182,11 +177,6 @@
           "Name": "City",
           "Type": "string",
           "Required": true
-        },
-        {
-          "Name": "County",
-          "Type": "string",
-          "Required": false
         },
         {
           "Name": "Postal Code",

@@ -19,7 +19,7 @@
           "Required": false
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
@@ -199,7 +199,7 @@
           "Required": false
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
@@ -279,7 +279,7 @@
           "Required": false
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
@@ -309,7 +309,7 @@
           "Required": false
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
@@ -359,7 +359,7 @@
           "Required": true
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
@@ -594,7 +594,7 @@
           "Required": true
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
@@ -714,7 +714,7 @@
           "Required": false
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
@@ -769,7 +769,7 @@
           "Required": false
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
@@ -999,7 +999,7 @@
           "Required": true
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
@@ -1059,7 +1059,7 @@
           "Required": true
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
@@ -1109,12 +1109,12 @@
           "Required": false
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
         {
-          "Name": "NeighBorhood",
+          "Name": "Neighborhood",
           "Type": "string",
           "Required": true
         },
@@ -1174,7 +1174,7 @@
           "Required": false
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
@@ -1319,7 +1319,7 @@
           "Required": true
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
@@ -1419,7 +1419,7 @@
           "Required": true
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
@@ -1454,7 +1454,7 @@
           "Required": true
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
@@ -1564,7 +1564,7 @@
           "Required": true
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },
@@ -1769,7 +1769,7 @@
           "Required": true
         },
         {
-          "Name": "Unit/Apt",
+          "Name": "Unit_Apt",
           "Type": "string",
           "Required": false
         },

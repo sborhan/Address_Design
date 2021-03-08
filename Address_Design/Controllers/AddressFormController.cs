@@ -45,6 +45,7 @@ namespace Address_Design.Controllers
         {
             String result = "";
             string connStr = "server=127.0.0.1;user=root;database=addresses;port=3306;password=usingMYSQL1!";
+            ArrayList jsonResult = new ArrayList();
             MySqlConnection conn = new MySqlConnection(connStr);
             try
             {
@@ -64,6 +65,8 @@ namespace Address_Design.Controllers
                             result += " ";
                             Console.WriteLine(rdr.GetValue(i).ToString());
                         }
+                        jsonResult.Add(result);
+                        result = "";
                     }
 
                     rdr.Close();
@@ -71,6 +74,7 @@ namespace Address_Design.Controllers
                 else
                 {
                     result = "There were no matching addresses found!";
+                    jsonResult.Add(result);
                 }
             }
             catch (Exception ex)
@@ -80,8 +84,7 @@ namespace Address_Design.Controllers
 
             conn.Close();
             Console.WriteLine("Done.");
-            var test = Json(result);
-            return Json(result);
+            return Json(jsonResult);
         }
 
         //[HttpPost]

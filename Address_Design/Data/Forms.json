@@ -274,11 +274,6 @@
           "Required": true
         },
         {
-          "Name": "Building Number",
-          "Type": "int",
-          "Required": false
-        },
-        {
           "Name": "Unit_Apt",
           "Type": "string",
           "Required": false

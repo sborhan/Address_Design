@@ -26,7 +26,8 @@
         $("#chooseCountry").bind("click", function () {
             var e = document.getElementById("browser");
             var strUser = e.value;
-            //alert(strUser);
+            
+            document.getElementById("dvItems").innerHTML = "";
 
             var parentElement = document.getElementById('formsection');
             document.getElementById('formsection').innerHTML = "";
@@ -88,8 +89,12 @@
                 success: function (data) {
                     var dvItems = $("#dvItems");
                     dvItems.empty();
-                    $('<h3>').append(data).appendTo(dvItems);
-                    $('<br>').append(data).appendTo(dvItems);
+                    $.each(data, function (index, value) {
+                        $('<h3>').append(value).appendTo(dvItems);
+                        $("div h3:last").append("&nbsp;");
+                    });
+                    //$('<h3>').append(data).appendTo(dvItems);
+                    //$('<br>').append(data).appendTo(dvItems);
                 },
                 error: function (data) { console.log(data) }
             });
@@ -132,8 +137,10 @@
                 success: function (data) {
                     var dvItems = $("#dvItems");
                     dvItems.empty();
-                    $('<h3>').append(data).appendTo(dvItems);
-                    $('<br>').append(data).appendTo(dvItems);
+                    $.each(data, function (index, value) {
+                        $('<h3>').append(value).appendTo(dvItems);
+                        $("div h3:last").append("&nbsp;");
+                    });
                 },
                 error: function (data) { console.log(data) }
             });

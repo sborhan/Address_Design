@@ -32,6 +32,11 @@
           "Name": "City",
           "Type": "string",
           "Required": true
+        },
+        {
+          "Name": "Province",
+          "Type": "string",
+          "Required": true
         }
       ]
     },

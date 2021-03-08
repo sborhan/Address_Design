@@ -369,6 +369,11 @@
           "Required": true
         },
         {
+          "Name": "District",
+          "Type": "string",
+          "Required": true
+        },
+        {
           "Name": "City",
           "Type": "string",
           "Required": true
@@ -565,6 +570,51 @@
         },
         {
           "Name": "Postal District",
+          "Type": "string",
+          "Required": true
+        }
+      ]
+    },
+    {
+      "country": "Formosa",
+      "fields": [
+        {
+          "Name": "Recipient",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Name",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Building Number",
+          "Type": "int",
+          "Required": true
+        },
+        {
+          "Name": "Unit_Apt",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Address Line",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "City",
+          "Type": "string",
+          "Required": true
+        },
+        {
+          "Name": "Island",
+          "Type": "string",
+          "Required": false
+        },
+        {
+          "Name": "Postal Code",
           "Type": "string",
           "Required": true
         }

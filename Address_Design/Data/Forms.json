@@ -326,7 +326,7 @@
         {
           "Name": "Postal Code",
           "Type": "string",
-          "Required": true
+          "Required": false
         },
         {
           "Name": "Province",

@@ -366,7 +366,7 @@
         {
           "Name": "Street Section",
           "Type": "string",
-          "Required": true
+          "Required": false
         },
         {
           "Name": "District",

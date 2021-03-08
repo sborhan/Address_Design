@@ -15,8 +15,12 @@
 <script type="text/javascript">
     $(document).ready(function () {
         // when the DOM has fully loaded...
+        $("#globalButton").bind("click", function () {
+            var onEventLaunchAddressForm = new PostGlobalAddress();
+            onEventLaunchAddressForm.launchAddressView();
+        });
         $("#narrowButton").bind("click", function () {
-            var onEventLaunchAddressForm = new PostAddress();
+            var onEventLaunchAddressForm = new PostNarrowAddress();
             onEventLaunchAddressForm.launchAddressView();
         });
         $("#chooseCountry").bind("click", function () {
@@ -46,7 +50,7 @@
             
         });
     });
-    function PostAddress() {
+    function PostNarrowAddress() {
         this.launchAddressView = function () {
             var inputs = document.getElementsByClassName('activeInput')
             var address = {};
@@ -84,7 +88,52 @@
                 success: function (data) {
                     var dvItems = $("#dvItems");
                     dvItems.empty();
-                    $('<h1>').append(data).appendTo(dvItems);
+                    $('<h3>').append(data).appendTo(dvItems);
+                    $('<br>').append(data).appendTo(dvItems);
+                },
+                error: function (data) { console.log(data) }
+            });
+
+        }
+    }
+
+    function PostGlobalAddress() {
+        this.launchAddressView = function () {
+            var inputs = document.getElementsByClassName('activeInput')
+            var address = {};
+            var id;
+            for (var i = 0; i < inputs.length; i++) {
+                id = inputs[i].id;
+                idNoSpace = id.replace(/\s/g, '');
+                if (document.getElementById(id).value.length == 0) {
+                    address[idNoSpace] = " ";
+                } else {
+                    address[idNoSpace] = document.getElementById(id).value;
+                }
+            }
+
+            // fetch values from input
+            //var Street1 = document.getElementById("Address Line").value
+            //var ZipCode1 = $("#Zip Code").value();
+
+            // build json object
+            //var address = {
+            //    AddressLine: Street1
+            //    //ZipCode: ZipCode1,
+            //};
+
+            $.ajax({
+                type: "POST",
+                url: "AddressForm",
+                traditional: true,
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                data: JSON.stringify(address),
+                success: function (data) {
+                    var dvItems = $("#dvItems");
+                    dvItems.empty();
+                    $('<h3>').append(data).appendTo(dvItems);
+                    $('<br>').append(data).appendTo(dvItems);
                 },
                 error: function (data) { console.log(data) }
             });

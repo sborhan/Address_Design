@@ -1311,7 +1311,7 @@
         {
           "Name": "Building Number",
           "Type": "int",
-          "Required": true
+          "Required": false
         },
         {
           "Name": "Address Line",
@@ -1329,9 +1329,14 @@
           "Required": true
         },
         {
+          "Name": "Province",
+          "Type": "string",
+          "Required": false
+        },
+        {
           "Name": "Postal Code",
           "Type": "string",
-          "Required": true
+          "Required": false
         }
       ]
     },

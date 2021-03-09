@@ -16,13 +16,15 @@
     $(document).ready(function () {
         // when the DOM has fully loaded...
         $("#globalButton").bind("click", function () {
-            var onEventLaunchAddressForm = new PostGlobalAddress();
+            var onEventLaunchAddressForm = new PutGlobalAddress();
             onEventLaunchAddressForm.launchAddressView();
         });
+
         $("#narrowButton").bind("click", function () {
-            var onEventLaunchAddressForm = new PostNarrowAddress();
+            var onEventLaunchAddressForm = new PutNarrowAddress();
             onEventLaunchAddressForm.launchAddressView();
         });
+
         $("#chooseCountry").bind("click", function () {
             var e = document.getElementById("browser");
             var strUser = e.value;
@@ -51,7 +53,8 @@
             
         });
     });
-    function PostNarrowAddress() {
+
+    function PutNarrowAddress() {
         this.launchAddressView = function () {
             var inputs = document.getElementsByClassName('activeInput')
             var address = {};
@@ -69,16 +72,6 @@
                 address["country"] = countrySelector.value;
             }
 
-            // fetch values from input
-            //var Street1 = document.getElementById("Address Line").value
-            //var ZipCode1 = $("#Zip Code").value();
-
-            // build json object
-            //var address = {
-            //    AddressLine: Street1
-            //    //ZipCode: ZipCode1,
-            //};
-
             $.ajax({
                 type: "PUT",
                 url: "AddressForm",
@@ -93,8 +86,6 @@
                         $('<h3>').append(value).appendTo(dvItems);
                         $("div h3:last").append("&nbsp;");
                     });
-                    //$('<h3>').append(data).appendTo(dvItems);
-                    //$('<br>').append(data).appendTo(dvItems);
                 },
                 error: function (data) { console.log(data) }
             });
@@ -102,7 +93,7 @@
         }
     }
 
-    function PostGlobalAddress() {
+    function PutGlobalAddress() {
         this.launchAddressView = function () {
             var inputs = document.getElementsByClassName('activeInput')
             var address = {};
@@ -118,16 +109,6 @@
 
                 address["country"] = " ";
             }
-
-            // fetch values from input
-            //var Street1 = document.getElementById("Address Line").value
-            //var ZipCode1 = $("#Zip Code").value();
-
-            // build json object
-            //var address = {
-            //    AddressLine: Street1
-            //    //ZipCode: ZipCode1,
-            //};
 
             $.ajax({
                 type: "PUT",

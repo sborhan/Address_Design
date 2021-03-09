@@ -44,14 +44,20 @@ namespace Address_Design.Controllers
         public JsonResult PostAddress(Address incomingAddress)
         {
             String result = "";
+            string sql = "";
             string connStr = "server=127.0.0.1;user=root;database=addresses;port=3306;password=usingMYSQL1!";
             ArrayList jsonResult = new ArrayList();
             MySqlConnection conn = new MySqlConnection(connStr);
             try
             {
                 conn.Open();
-
-                string sql = constructQuery(incomingAddress);
+                if (incomingAddress.Country.Equals(" "))
+                {
+                    sql = constructQuery(incomingAddress, true);
+                } else
+                {
+                    sql = constructQuery(incomingAddress, false);
+                }
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 
@@ -84,25 +90,8 @@ namespace Address_Design.Controllers
             return Json(jsonResult);
         }
 
-        //[HttpPost]
-        //public JsonResult PostAddress(Address incomingAddress)
-        //{
-        //    Address status = null;
-        //    try
-        //    {
-        //        saveAddress(incomingAddress);
-        //        status = new Address() { Street = "main street", ZipCode = "9805" };
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        new NotImplementedException();
-        //    }
-
-        //    return Json(status);
-        //}
-
         #region privateHelpers
-        private string constructQuery(Address incomingAddress)
+        private string constructQuery(Address incomingAddress, bool isGlobal)
         {
             string json = JsonConvert.SerializeObject(incomingAddress);
             JObject jsonObj = JObject.Parse(json);
@@ -111,16 +100,25 @@ namespace Address_Design.Controllers
             
             string sql = "SELECT ";
 
-            foreach (string key in keys)
+            if (!isGlobal)
             {
-                var passedValue = jsonObj.GetValue(key) is null ? null: jsonObj.GetValue(key).ToString();
-                if (!passedValue.Equals("")) 
+                foreach (string key in keys)
                 {
-                    sql += "g." + key + ", ";
+                    var passedValue = jsonObj.GetValue(key) is null ? null : jsonObj.GetValue(key).ToString();
+                    if (!passedValue.Equals(""))
+                    {
+                        sql += "g." + key + ", ";
+                    }
                 }
+                sql = sql.Remove(sql.LastIndexOf(","));
             }
-            sql = sql.Remove(sql.LastIndexOf(","));
+            else
+            {
+                sql += " *";
+            }
+
             sql += " FROM global_addresses g WHERE ";
+
             foreach (string key in keys)
             {
                 var passedValue = jsonObj.GetValue(key) is null ? null : jsonObj.GetValue(key).ToString();
@@ -130,26 +128,13 @@ namespace Address_Design.Controllers
                     sql += jsonObj.GetValue(key) + "' AND ";
                 }
             }
+
             sql = sql.Remove(sql.LastIndexOf("AND"));
             sql = sql.TrimEnd();
             sql += ";";
 
             return sql;
         }
-
-        //private Boolean saveAddress(Address incomingAddress)
-        //{
-        //    if (incomingAddress.Street is null)
-        //    {
-        //        // do something...
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        // do something positive!
-        //        return true;
-        //    }
-        //}
         #endregion
 
 
@@ -198,48 +183,5 @@ namespace Address_Design.Controllers
         }
 
     }
-
-
-    ////
-    //// GET: /AddressForm/FilledForm
-    //[HttpGet("FilledForm")]
-    //    public IActionResult FilledForm(string name, int numTimes = 1)
-    //    {
-    //        ViewData["Message"] = "Hello " + name;
-    //        ViewData["NumTimes"] = numTimes;
-
-    //        return View();
-    //    }
-
-
-    //    //
-    //    // GET: /AddressForm/Get1
-    //    [HttpGet("Get1")]
-    //    public string[] Get1()
-    //    {
-    //        return new string[]
-    //        {
-    //            "This is a stub for a second GET",
-    //            "REPLACE ME"
-    //        };
-    //    }
-
-    //    //
-    //    // GET: /AddressForm/Get2?name=Rick&numtimes=4
-    //    [HttpGet("Get2")]
-    //    public string Get2(string name, int numTimes = 1)
-    //    {
-    //        return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
-    //    }
-
-    //    //
-    //    // GET: /AddressForm/Get3/3?name=Rick
-    //    [HttpGet("Get3")]
-    //    public string Get3(string name, int ID = 1)
-    //    {
-    //        return HtmlEncoder.Default.Encode($"Hello {name}, ID: {ID}");
-    //    }
-
-}
-;
+};
 

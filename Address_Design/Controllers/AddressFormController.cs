@@ -40,7 +40,7 @@ namespace Address_Design.Controllers
         }
 
 
-        [HttpPost]
+        [HttpPut]
         public JsonResult PostAddress(Address incomingAddress)
         {
             String result = "";
@@ -49,7 +49,6 @@ namespace Address_Design.Controllers
             MySqlConnection conn = new MySqlConnection(connStr);
             try
             {
-                Console.WriteLine("Connecting to MySQL...");
                 conn.Open();
 
                 string sql = constructQuery(incomingAddress);
@@ -63,7 +62,6 @@ namespace Address_Design.Controllers
                         {
                             result += rdr.GetValue(i).ToString();
                             result += " ";
-                            Console.WriteLine(rdr.GetValue(i).ToString());
                         }
                         jsonResult.Add(result);
                         result = "";
@@ -83,7 +81,6 @@ namespace Address_Design.Controllers
             }
 
             conn.Close();
-            Console.WriteLine("Done.");
             return Json(jsonResult);
         }
 
@@ -108,7 +105,6 @@ namespace Address_Design.Controllers
         private string constructQuery(Address incomingAddress)
         {
             string json = JsonConvert.SerializeObject(incomingAddress);
-            //Console.WriteLine(json);
             JObject jsonObj = JObject.Parse(json);
 
             IList<string> keys = jsonObj.Properties().Select(p => p.Name).ToList();
@@ -137,7 +133,6 @@ namespace Address_Design.Controllers
             sql = sql.Remove(sql.LastIndexOf("AND"));
             sql = sql.TrimEnd();
             sql += ";";
-            Console.WriteLine(sql);
 
             return sql;
         }

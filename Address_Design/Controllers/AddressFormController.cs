@@ -64,7 +64,7 @@ namespace Address_Design.Controllers
                 if (rdr.HasRows) {
                     while (rdr.Read())
                     {
-                        for (int i = 0; i < rdr.FieldCount; i++)
+                        for (int i = 1; i < rdr.FieldCount; i++)
                         {
                             result += rdr.GetValue(i).ToString();
                             result += " ";
